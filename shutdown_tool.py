@@ -6,8 +6,7 @@ import subprocess
 
 def shutdown():
     try:
-        minutes_to_shut = int(minutes.get())
-        subprocess.call(u'shutdown -s -t {}'.format(minutes_to_shut))
+        subprocess.call(u'shutdown -s -t {}'.format(int(minutes.get())))
     except ValueError:
         error_message = u'Вы ввели неверное колличество минут. Введите целое число.'
         tkMessageBox.showwarning(title=u'Ошибка', message=error_message)
